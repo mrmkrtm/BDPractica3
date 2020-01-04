@@ -5,12 +5,15 @@ import chat.model.Message;
 import com.mysql.cj.protocol.x.MessageConstants;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.text.BoxView;
+import javax.swing.text.DefaultCaret;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
@@ -200,6 +203,8 @@ public class View {
 
     private Controller controller;
 
+    private volatile boolean inReady;
+
     private String username;
     private long userId;
     private JFrame frame;
@@ -209,19 +214,25 @@ public class View {
     private JTextArea textOutput;
     private JScrollPane scrollInput;
     private JScrollPane scrollOutput;
+    private JButton sendButton;
 
     public View () {
+        inReady = true;
+
         //output
         outputPanel = new JPanel();
         outputPanel.setBorder( new TitledBorder( new EtchedBorder(), "output" ) );
 
-        textOutput = new JTextArea(10, 25);
+        textOutput = new JTextArea(10, 35);
         textOutput.setText("");
         textOutput.setEditable(false);
         textOutput.setLineWrap(true);
 
+        DefaultCaret caret = (DefaultCaret)textOutput.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+
         scrollOutput = new JScrollPane(textOutput);
-        scrollOutput.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollOutput.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
 
         outputPanel.add(scrollOutput);
 
@@ -238,6 +249,17 @@ public class View {
 
         inputPanel.add(scrollInput);
 
+        //send button
+        sendButton = new JButton("ENVIAR");
+        sendButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(!inReady){
+                    inReady = true;
+                }
+            }
+        });
+
+        inputPanel.add(sendButton);
 
         //frame
         frame = new JFrame();
@@ -267,8 +289,16 @@ public class View {
         textOutput.append("\nBienvenido a nuestro chat\nPor favor, ingresa tu nombre de usuario: ");
 
         do {
-            Scanner s = new Scanner(System.in);
-            this.username = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            this.username = in.trim();
         } while (username.length() == 0);
 
         this.controller = new Controller();
@@ -285,8 +315,16 @@ public class View {
         do {
             textOutput.append("\n¡Hola " + username + "!\nElija una acción:\n [1] Acceder a una sala de chat\n [2] Crear una sala de chat\n [3] Salir");
 
-            Scanner s = new Scanner(System.in);
-            String line = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            String line = in.trim();
 
             try {
                 option = Integer.parseInt(line);
@@ -313,8 +351,17 @@ public class View {
         do {
             textOutput.append("\nEscriba el nombre de la sala de chat:");
 
-            Scanner s = new Scanner(System.in);
-            name = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            name = in.trim();
+
         } while (name.length() == 0);
 
         controller.createChatRoom(this.userId, name);
@@ -337,8 +384,16 @@ public class View {
 
             textOutput.append("\n [" + (chatRooms.size()+1) + "] Volver");
 
-            Scanner s = new Scanner(System.in);
-            String line = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            String line = in.trim();
 
             try {
                 option = Integer.parseInt(line);
@@ -363,8 +418,16 @@ public class View {
         do {
             textOutput.append("\nElija una acción:\n [1] Leer mensajes\n [2] Enviar un mensaje\n [3] Volver");
 
-            Scanner s = new Scanner(System.in);
-            String line = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            String line = in.trim();
 
             try {
                 option = Integer.parseInt(line);
@@ -393,14 +456,18 @@ public class View {
             textOutput.append("\nNo se han encontrado mensajes en esta sala de chat");
         } else {
             for (Message message : messages) {
-                System.out.print("\n" + message.toString());
+                textOutput.append("\n" + message.toString());
             }
         }
 
-        textOutput.append("\n\nPresione ENTER para continuar");
-
-        Scanner s = new Scanner(System.in);
-        s.nextLine();
+        textOutput.append("\n\nPresione ENVIAR para continuar");
+        inReady = false;
+        while(!inReady){
+            try{
+                Thread.sleep(500);
+            } catch( InterruptedException e){
+            }
+        }
 
         this.showChatRoomMenu(chatRoomId);
     }
@@ -412,34 +479,21 @@ public class View {
         do {
             textOutput.append("\nEscriba el contenido del mensaje:");
 
-            Scanner s = new Scanner(System.in);
-            text = s.nextLine().trim();
+            inReady = false;
+            while(!inReady){
+                try{
+                    Thread.sleep(500);
+                } catch( InterruptedException e){
+                }
+            }
+            String in = textInput.getText();
+            textInput.setText("");
+            text = in.trim();
+
         } while (text.length() == 0);
 
         controller.sendMessage(this.userId, chatRoomId, text);
 
         this.showChatRoomMenu(chatRoomId);
-    }
-
-
-}
-
-class AppFrame extends Frame {
-    public AppFrame(int size, String name) {
-        super(name);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                dispose();
-                System.exit(0);
-            }
-        });
-
-        setSize(size, size);
-    }
-}
-
-class AppCanvas extends Canvas {
-    public AppCanvas(){
-
     }
 }
