@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03978b1e-6dcd-4f78-bbf2-1cc83e7290dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/AppCanvas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/AppFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/AppFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chat/View$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chat/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practica-hibernate-curso-19-20/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-hibernate-curso-19-20/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/chat/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="303">
+              <caret line="34" column="85" lean-forward="true" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -59,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/chat/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="821">
-              <caret line="230" column="96" selection-start-line="230" selection-start-column="96" selection-end-line="230" selection-end-column="96" />
+            <state relative-caret-position="525">
+              <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6893#7080#0" expanded="true" />
@@ -207,7 +202,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578170836544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578240608223" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -253,7 +248,7 @@
     <frame x="0" y="23" width="1440" height="827" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -296,13 +291,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chat/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -353,13 +341,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chat/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="821">
-          <caret line="230" column="96" selection-start-line="230" selection-start-column="96" selection-end-line="230" selection-end-column="96" />
+        <state relative-caret-position="525">
+          <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6893#7080#0" expanded="true" />
             <element signature="e#7079#7080#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chat/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="34" column="85" lean-forward="true" selection-start-line="34" selection-start-column="85" selection-end-line="34" selection-end-column="85" />
         </state>
       </provider>
     </entry>

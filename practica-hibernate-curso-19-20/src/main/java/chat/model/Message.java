@@ -10,18 +10,28 @@ import java.util.Date;
  * atendiendo a los comentarios indicados mediante @TODO
  */
 // @TODO completar las anotaciones de la clase
+    @Entity
+    @Table(name="messages")
 public class Message {
 
     // @TODO completar las anotaciones del atributo id (autogenerado)
+    @Id
+    @GeneratedValue
+    @Column(name = "id", nullable = false, unique= true)
     private Long id;
 
     // @TODO completar las anotaciones del atributo text
+    @Column(name = "text", nullable = false)
     private String text;
 
     // @TODO completar las anotaciones del atributo chatRoom
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "chatRoom", nullable = false)
     private ChatRoom chatRoom;
 
     // @TODO completar las anotaciones del atributo creator
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "creator", nullable = false)
     private User creator;
 
     @CreationTimestamp

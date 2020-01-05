@@ -46,7 +46,11 @@ public class Controller {
     public User createUser(String username) throws SQLException {
 
         // @TODO complete este metodo para crear de forma presistente un usuario
-
+        User user = new User(username);
+        session.beginTransaction();
+        session.saveOrUpdate(user);
+        session.getTransaction().commit();
+        return user;
     }
 
     /**
@@ -59,7 +63,11 @@ public class Controller {
     public ChatRoom createChatRoom (User user, String name) throws SQLException {
 
         // @TODO complete este metodo para crear de forma presistente una sala de chat
-
+        ChatRoom newchat= new ChatRoom(name, user);
+        session.beginTransaction();
+        session.saveOrUpdate(newchat);
+        session.getTransaction().commit();
+        return newchat;
     }
 
     /**
@@ -73,8 +81,13 @@ public class Controller {
 
         // @TODO complete este metodo para crear de forma presistente un mensaje
 
+        Message message = new Message(text, chatRoom, user);
         user.getMessages().add(message);
         chatRoom.getMessages().add(message);
+        session.beginTransaction();
+        session.saveOrUpdate(message);
+        session.saveOrUpdate(chatRoom);
+        session.getTransaction().commit();
     }
 
     /**
@@ -85,6 +98,8 @@ public class Controller {
     public List<ChatRoom> getChatRooms () throws SQLException {
 
         // @TODO complete este metodo para devolver todas las salas de chat
-
+        Query query = session.createQuery("FROM ChatRoom");
+        List<ChatRoom> list = query.getResultList();
+        return list;
     }
 }
