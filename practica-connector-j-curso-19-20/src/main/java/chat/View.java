@@ -2,9 +2,7 @@ package chat;
 
 import chat.model.ChatRoom;
 import chat.model.Message;
-import com.mysql.cj.protocol.x.MessageConstants;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -12,15 +10,18 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.text.BoxView;
 import javax.swing.text.DefaultCaret;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Scanner;
+
 
 /**
  * Implementa la interfaz gráfica basada en línea de comandos de la aplicación. Esta clase no
  * debe ser modificada.
+ */
+
+/**
+ * Interfaz de consola
  */
 /*
 public class View {
@@ -199,11 +200,14 @@ public class View {
 }
 */
 
+/**
+ * GUI hecha con java swing
+ */
 public class View {
 
     private Controller controller;
 
-    private volatile boolean inReady;
+    private volatile boolean inReady;               //Indica si el input está listo/se espera input
 
     private String username;
     private long userId;
@@ -217,7 +221,7 @@ public class View {
     private JButton sendButton;
 
     public View () {
-        inReady = true;
+        inReady = true;                     //indica que no estamos esperando input
 
         //output
         outputPanel = new JPanel();
@@ -253,8 +257,8 @@ public class View {
         sendButton = new JButton("ENVIAR");
         sendButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(!inReady){
-                    inReady = true;
+                if(!inReady){                               //Si se espera input
+                    inReady = true;                         //señalamos que el input está listo
                 }
             }
         });
@@ -289,13 +293,14 @@ public class View {
         textOutput.append("\nBienvenido a nuestro chat\nPor favor, ingresa tu nombre de usuario: ");
 
         do {
-            inReady = false;
+            inReady = false;                            //Señalamos que esperamos input
             while(!inReady){
                 try{
                     Thread.sleep(500);
                 } catch( InterruptedException e){
                 }
             }
+            //cuando el boton indica que el input está listo tomamos el texto
             String in = textInput.getText();
             textInput.setText("");
             this.username = in.trim();
