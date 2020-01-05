@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="89b5afb8-d6d2-41a1-a191-1f3943dad8ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/src/main/java/chat/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/src/main/java/chat/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/../practica-connector-j-curso-19-20/target/classes/chat/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chat/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chat/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chat/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/chat/View.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +16,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/chat/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2587">
+            <state relative-caret-position="-2641">
               <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,7 +97,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-28" />
+    <option name="x" value="30" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="828" />
@@ -166,7 +159,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578242476976" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578242479591" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -209,7 +202,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-28" y="23" width="1440" height="828" extended-state="0" />
+    <frame x="30" y="23" width="1440" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
@@ -222,7 +215,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32880434" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32880434" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32880434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -278,7 +271,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chat/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2587">
+        <state relative-caret-position="-2641">
           <caret line="204" lean-forward="true" selection-start-line="204" selection-end-line="204" />
           <folding>
             <element signature="imports" expanded="true" />
